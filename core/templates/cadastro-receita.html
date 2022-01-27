@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="../static/css/cadastro-receita-style.css">
+		<link rel="icon" type="imagem/gif" href="../static/images/favicon.gif"/>
+        <title>Cadastro de Receita</title>
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        {% include 'header.html' %}
+
+        <div class="conteudo">
+            <h1>Cadastro de Nova Receita</h1>
+            <form class="formulario" name="formcadastro" onSubmit="return(AlertaCadastro())">
+                <label class="label-input-titulo">Título da Receita:
+                <input class="input-titulo" type="text" name="titulo">
+                </label>
+                <div class="div-tipo-receita">
+                    <label class="label-tipo-receita">Tipo de Receita: </label>
+                    <select class="dropdown" name="tiporeceita" >
+                        <option value="selecionar">Selecionar...</option>
+                        <option value="entrada">Entrada</option>
+                        <option value="principal">Prato Principal</option>
+                        <option value="sobremesa">Sobremesa</option>
+                    </select>
+                </div>
+                <label class="label-input">Ingredientes:
+                    <textarea id="ingredientes" name="ingredientes"></textarea>
+                </label>
+                <label class="label-input">Modo de Preparo:
+                    <textarea id="modo-preparo" name="preparo"></textarea>
+                </label>
+
+                <label class="titulo-input" for="imagem">Imagem:</label>
+                <input class="imagem" name="myFile" type="file">
+                <div class="botoes">
+                    <button id="enviar" class="botao-enviar">ENVIAR</button>
+                </div>
+            </form>
+        </div>
+
+        <!--========== FOOTER ==========-->
+        {% include 'footer.html' %}
+
+        <!--========== MAIN JS ==========-->
+        <script src="../static/js/cadastro.js"></script>
+        <script src="../static/js/main.js"></script>
+        <script>
+            var headerContainer = document.getElementById("cadastrar-receita");
+            headerContainer.className += " active-link";
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+{% block content %}
+		<header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="{% url 'index' %}" class="nav__logo">Caderno de Receitas</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="{% url 'index' %}" id="home" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a href="#" id="receitas" class="nav__link2">Receitas</a>
+                                <ul class="nav__sub-list">
+                                    <li class="nav__sub-item"><a href="entrada.html" class="nav__link">Entrada</a></li>
+                                    <li class="nav__sub-item"><a href="principal.html" class="nav__link">Principal</a></li>
+                                    <li class="nav__sub-item"><a href="sobremesas.html" class="nav__link">Sobremesas</a></li>
+                                </ul>
+                            </li>
+                        <li class="nav__item"><a href="{% url 'cadastro-receita' %}" id="cadastrar-receita" class="nav__link">Cadastrar Receita</a></li>
+                        <li class="nav__item"><a href="{% url 'login' %}" id="login" class="nav__link">Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+{% endblock %}
